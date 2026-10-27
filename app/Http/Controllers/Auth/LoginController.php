@@ -24,7 +24,7 @@ class LoginController extends Controller
         return [
             'data' => [
                 'user' => new UserResource($user),
-                'token' => $user
+                'token' => $token
             ]
         ];
     }
