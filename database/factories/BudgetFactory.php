@@ -22,7 +22,7 @@ class BudgetFactory extends Factory
         return [
             'user_id' => User::factory(),
             'category_id' => Category::factory(),
-            'month' => now()->startOfMonth()->format('Y-m-d'),
+            'month' => now()->startOfMonth()->format('Y-m'),
             'limit_amount' => fake()->randomFloat(2, 100, 2000),
         ];
     }

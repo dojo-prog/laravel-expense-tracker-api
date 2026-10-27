@@ -21,7 +21,7 @@ return new class extends Migration
                 ->constrained()
                 ->restrictOnDelete();
 
-            $table->date('month');
+            $table->string('month', 7);
             $table->decimal('limit_amount');
             $table->timestamps();
 

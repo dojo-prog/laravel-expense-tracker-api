@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
                 ->recycle($categories)
                 ->create();
 
-            $month = now()->startOfMonth()->toDateString();
+            $month = now()->startOfMonth()->format('Y-m');
 
             $categories
                 ->random(fake()->numberBetween(4, 6))
