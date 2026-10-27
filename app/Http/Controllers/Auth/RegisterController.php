@@ -23,12 +23,9 @@ class RegisterController extends Controller
     public function store(RegisterRequest $request): Response
     {
         $validated = $request->validated();
-        $password = $validated['password'];
+        $validated['password'] = Hash::make($validated['password']);
  
-        $user = User::create(
-            ...$validated,
-            Hash::make($password)
-        );
+        $user = User::create($validated);
 
         event(new Registered($user));
 
