@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\BudgetController;
 use App\Http\Controllers\Api\V1\CategoryController;
 use App\Http\Controllers\Api\V1\ExpenseController;
 use Illuminate\Http\Request;
@@ -15,6 +16,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('v1')->group(function () {
         Route::apiResource('categories', CategoryController::class);
         Route::apiResource('expenses', ExpenseController::class);
+        Route::apiResource('budgets', BudgetController::class);
     });
 });
 
