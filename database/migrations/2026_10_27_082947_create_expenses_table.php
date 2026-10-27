@@ -24,10 +24,10 @@ return new class extends Migration
                 ->nullOnDelete();
             
 
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->decimal('amount', 8, 2);
             $table->date('expense_date');
-            $table->text('notes');
+            $table->text('notes')->nullable();
 
             $table->timestamps();
 
