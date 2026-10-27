@@ -56,6 +56,7 @@ class ExpenseController extends Controller
         $sortOrder = $filters['sort_order'] ?? 'desc';
 
         $expenses = $query
+            ->with(['category', 'user'])
             ->orderBy($sortBy, $sortOrder)
             ->paginate($filters['per_page'] ?? 15);
 
